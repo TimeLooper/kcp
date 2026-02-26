@@ -60,3 +60,8 @@ if(BUILD_TESTING)
         target_compile_options(kcp_test PRIVATE /utf-8)
     endif()
 endif()
+
+add_executable(kcp_test_server kcp_test_server.cpp)
+target_link_libraries(kcp_test_server PRIVATE kcp)
+add_executable(kcp_test_client kcp_test_client.cpp)
+target_link_libraries(kcp_test_client PRIVATE kcp)
